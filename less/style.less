@@ -1,0 +1,147 @@
+﻿@import "_kit.less";
+@import "_reset.less";
+@import "_mixin.less";
+@import "_grid.less";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+html,
+body,
+.page,
+.auth,
+.auth-wrap,
+.table {
+    .abs-full-height();   
+}
+
+.table {
+    .table();
+    width: 100%;
+}
+
+.template();
+
+.list();
+
+.auth {
+    &-form {
+        display: inline-block;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+#page, .wrapper {
+    .abs-full-height();
+}
+
+.header {
+    .abs-clearfix();
+    color: @iner-color;
+
+    &-logo {
+        float: left;
+        font-family: 'Oswald', sans-serif;
+        font-size: 18px;
+    }
+
+    &-nav {
+        float: right;
+
+        .list {
+            &-item {
+                margin-left: 25px;
+            }
+
+            &-link {
+                color: @iner-link-color;
+
+                &:hover {
+                    color: @iner-color;
+                }
+            }
+
+            .fas {
+                margin-right: 5px;
+                min-width: 15px;
+            }
+
+            &-name {
+                text-decoration: underline;
+            }
+
+            .fas,
+            &-name {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+.footer {
+    .abs-clearfix();
+    color: @iner-color;
+
+    &-copy {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        width: 100%;
+    }
+
+    .footer {
+        transform: translate(0, -100%);
+    }
+
+    .main {
+        position: relative;
+        min-height: 100%;
+        padding: 60px 15px;
+    }
+}
+
+.main {
+    .go-to-top {
+        position: fixed;
+        right: 25px;
+        bottom: 85px;
+        font-size: 48px;
+        padding: 0;
+        margin: 0;
+        background: transparent;
+        border: none;
+        opacity: .5;
+        transition: opacity 0.25s linear;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        > i {
+            display: block;
+        }
+    }
+}
+
+.color-1 {
+    color: @two-color;
+}
+
+.color-2 {
+    color: @warn-color;
+}

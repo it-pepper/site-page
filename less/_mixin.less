@@ -1,0 +1,53 @@
+@import "_kit.less";
+
+.abs-clearfix() {
+    &:before, &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.abs-full-height() {
+    position: relative;
+    height: 100%;
+}
+
+.table() {
+    .abs-full-height(); 
+    display: table;
+
+    &-td {
+        display: table-cell;
+    }
+
+    &-tr {
+        display: table-row;
+
+        &.head, &.foot {
+            height: 1px;
+        }
+    }
+}
+
+.template() {
+    .header, .footer {
+        padding: 15px;
+        background-color: @base-color;
+    }
+}
+
+.list() {
+    .list {
+        display: block;
+        margin: 0;
+        padding: 0;
+
+        &-item {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
